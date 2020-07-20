@@ -100,7 +100,7 @@ public class HelpCommand {
 			sender.sendMessage(new ComponentBuilder()
 					.append("Use ")
 					.append("/friend help").color(ChatColor.GREEN)
-					.append(" to see all commands.")
+					.append(" to see all commands.").color(ChatColor.WHITE)
 					.create());
 			sender.sendMessage(new ComponentBuilder()
 					.append("Built on the ").color(ChatColor.DARK_AQUA)
