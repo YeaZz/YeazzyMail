@@ -1,5 +1,6 @@
 package com.gmail.perhapsitisyeazz.command;
 
+import com.gmail.perhapsitisyeazz.manager.HelpCommand;
 import com.moderocky.mask.command.Commander;
 import com.moderocky.mask.template.WrappedCommand;
 import org.bukkit.command.Command;
@@ -20,7 +21,7 @@ public class MainCommand extends Commander<CommandSender> implements WrappedComm
 
 	@Override
 	public CommandSingleAction<CommandSender> getDefault() {
-		return null;
+		return HelpCommand::sendHelpMessage;
 	}
 
 	@Override

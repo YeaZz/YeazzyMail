@@ -1,5 +1,6 @@
 package com.gmail.perhapsitisyeazz;
 
+import com.gmail.perhapsitisyeazz.command.MainCommand;
 import com.gmail.perhapsitisyeazz.listener.JoinEvent;
 import com.moderocky.mask.template.BukkitPlugin;
 
@@ -23,6 +24,9 @@ public class YeazzyMail extends BukkitPlugin {
         register(
                 new JoinEvent()
                 );
+        register(
+                new MainCommand()
+        );
     }
 
     @Override
