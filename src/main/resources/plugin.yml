@@ -1,0 +1,6 @@
+name: YeazzyMail
+version: 1.0.0
+main: com.gmail.perhapsitisyeazz.YeazzyMail
+api-version: 1.15
+description: 'Mail plugin'
+author: [YeaZz_]
