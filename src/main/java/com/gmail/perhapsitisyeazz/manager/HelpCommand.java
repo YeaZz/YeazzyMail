@@ -16,7 +16,7 @@ public class HelpCommand {
 
 	private static final YeazzyMail instance = YeazzyMail.getInstance();
 
-	public static void friendHelpCommand(CommandSender sender, Commander<?> commander) {
+	public static void mailHelpCommand(CommandSender sender, Commander<?> commander) {
 		if (sender instanceof Player) {
 			ComponentBuilder builder = new ComponentBuilder();
 			builder.append("Running ").color(ChatColor.DARK_GREEN);
