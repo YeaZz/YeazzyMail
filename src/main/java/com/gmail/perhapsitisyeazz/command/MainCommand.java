@@ -18,7 +18,8 @@ public class MainCommand extends Commander<CommandSender> implements WrappedComm
 	protected CommandImpl create() {
 		return command("mail")
 				.arg("help", sender -> HelpCommand.mailHelpCommand(sender, this))
-				.arg("list");
+				.arg("list")
+				.arg("send");
 	}
 
 	@Override
