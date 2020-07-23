@@ -25,7 +25,7 @@ public class MainCommand extends Commander<CommandSender> implements WrappedComm
 
 	@Override
 	public CommandSingleAction<CommandSender> getDefault() {
-		return HelpCommand::sendHelpMessage;
+		return HelpCommand::sendDefaultMessage;
 	}
 
 	@Override

@@ -66,7 +66,7 @@ public class HelpCommand {
 		}
 	}
 
-	public static void sendHelpMessage(CommandSender sender) {
+	public static void sendDefaultMessage(CommandSender sender) {
 		ComponentBuilder builder = new ComponentBuilder();
 		if (sender instanceof Player) {
 			builder
