@@ -19,7 +19,8 @@ public class MainCommand extends Commander<CommandSender> implements WrappedComm
 		return command("mail")
 				.arg("help", sender -> HelpCommand.mailHelpCommand(sender, this))
 				.arg("list")
-				.arg("send");
+				.arg("send")
+				.arg("delete");
 	}
 
 	@Override
