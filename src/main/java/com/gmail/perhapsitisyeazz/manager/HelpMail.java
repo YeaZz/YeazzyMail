@@ -12,7 +12,7 @@ import org.bukkit.entity.Player;
 
 import java.util.Map;
 
-public class HelpCommand {
+public class HelpMail {
 
 	private static final YeazzyMail instance = YeazzyMail.getInstance();
 

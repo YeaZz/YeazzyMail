@@ -16,7 +16,7 @@ public class JoinFile {
 		object.addProperty("UniqueID", player.getUniqueId().toString());
 		object.addProperty("Username", player.getName());
 		object.addProperty("hasEmailToggle", true);
-		object.add("EmailList", new JsonArray());
+		object.add("EmailList", new JsonObject());
 		return object;
 	}
 

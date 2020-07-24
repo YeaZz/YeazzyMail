@@ -1,10 +1,12 @@
 package com.gmail.perhapsitisyeazz.command;
 
-import com.gmail.perhapsitisyeazz.manager.HelpCommand;
+import com.gmail.perhapsitisyeazz.manager.HelpMail;
+import com.gmail.perhapsitisyeazz.manager.ListMail;
 import com.moderocky.mask.command.Commander;
 import com.moderocky.mask.template.WrappedCommand;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -17,15 +19,15 @@ public class MainCommand extends Commander<CommandSender> implements WrappedComm
 	@Override
 	protected CommandImpl create() {
 		return command("mail")
-				.arg("help", sender -> HelpCommand.mailHelpCommand(sender, this))
-				.arg("list")
+				.arg("help", sender -> HelpMail.mailHelpCommand(sender, this))
+				.arg("list", desc("List your mails"), sender -> ListMail.getMailList((Player) sender))
 				.arg("send")
 				.arg("delete");
 	}
 
 	@Override
 	public CommandSingleAction<CommandSender> getDefault() {
-		return HelpCommand::sendDefaultMessage;
+		return HelpMail::sendDefaultMessage;
 	}
 
 	@Override
