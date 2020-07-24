@@ -2,8 +2,10 @@ package com.gmail.perhapsitisyeazz.command;
 
 import com.gmail.perhapsitisyeazz.manager.HelpMail;
 import com.gmail.perhapsitisyeazz.manager.ListMail;
-import com.moderocky.mask.command.Commander;
+import com.gmail.perhapsitisyeazz.manager.SendMail;
+import com.moderocky.mask.command.*;
 import com.moderocky.mask.template.WrappedCommand;
+import org.bukkit.OfflinePlayer;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -21,7 +23,12 @@ public class MainCommand extends Commander<CommandSender> implements WrappedComm
 		return command("mail")
 				.arg("help", sender -> HelpMail.mailHelpCommand(sender, this))
 				.arg("list", desc("List your mails"), sender -> ListMail.getMailList((Player) sender))
-				.arg("send")
+				.arg("send", desc("Send a mail"), sender -> sender.sendMessage("pute"),
+						arg(
+								(sender, input) -> SendMail.sendMail((Player) sender, (OfflinePlayer) input[0], (String) input[1]),
+								new ArgOfflinePlayer(),
+								new ArgStringFinal()
+						))
 				.arg("delete");
 	}
 
