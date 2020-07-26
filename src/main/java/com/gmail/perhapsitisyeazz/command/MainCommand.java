@@ -1,5 +1,6 @@
 package com.gmail.perhapsitisyeazz.command;
 
+import com.gmail.perhapsitisyeazz.manager.DeleteMail;
 import com.gmail.perhapsitisyeazz.manager.HelpMail;
 import com.gmail.perhapsitisyeazz.manager.ListMail;
 import com.gmail.perhapsitisyeazz.manager.SendMail;
@@ -29,7 +30,11 @@ public class MainCommand extends Commander<CommandSender> implements WrappedComm
 								new ArgOfflinePlayer(),
 								new ArgStringFinal()
 						))
-				.arg("delete");
+				.arg("delete", desc("Delete a mail"), sender -> sender.sendMessage("pute"),
+						arg(
+								(sender, input) -> DeleteMail.deleteMail((Player) sender, (Integer) input[0]),
+								new ArgInteger()
+						));
 	}
 
 	@Override
