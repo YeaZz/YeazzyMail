@@ -1,6 +1,5 @@
 package com.gmail.perhapsitisyeazz.util;
 
-import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.moderocky.mask.internal.utility.FileManager;
 import org.bukkit.entity.Player;
