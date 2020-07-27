@@ -3,6 +3,7 @@ package com.gmail.perhapsitisyeazz.manager;
 import com.gmail.perhapsitisyeazz.util.Data;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import net.md_5.bungee.api.chat.ComponentBuilder;
 import org.bukkit.entity.Player;
 
 public class DeleteMail {
@@ -15,8 +16,10 @@ public class DeleteMail {
 			sender.sendMessage("This mail doesn't exist.");
 			return;
 		}
-		sender.sendMessage("Are you sure ?");
-		confirmDeleteMail(sender, integer);
+		sender.sendMessage(new ComponentBuilder()
+				.append("YES")
+				.append("NO")
+				.create());
 	}
 
 	public static void confirmDeleteMail(Player sender, Integer integer) {
