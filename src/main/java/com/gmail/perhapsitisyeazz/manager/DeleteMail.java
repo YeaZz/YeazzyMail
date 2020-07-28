@@ -4,6 +4,8 @@ import com.gmail.perhapsitisyeazz.util.Data;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import net.md_5.bungee.api.chat.ComponentBuilder;
+import net.md_5.bungee.api.chat.HoverEvent;
+import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.entity.Player;
 
 public class DeleteMail {
@@ -18,6 +20,7 @@ public class DeleteMail {
 		}
 		sender.sendMessage(new ComponentBuilder()
 				.append("YES")
+				.event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, TextComponent.fromLegacyText("YES")))
 				.append("NO")
 				.create());
 	}
