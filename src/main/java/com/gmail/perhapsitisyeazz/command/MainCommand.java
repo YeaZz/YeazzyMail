@@ -1,10 +1,7 @@
 package com.gmail.perhapsitisyeazz.command;
 
 import com.gmail.perhapsitisyeazz.manager.*;
-import com.moderocky.mask.command.ArgInteger;
-import com.moderocky.mask.command.ArgOfflinePlayer;
-import com.moderocky.mask.command.ArgStringFinal;
-import com.moderocky.mask.command.Commander;
+import com.moderocky.mask.command.*;
 import com.moderocky.mask.template.WrappedCommand;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.command.Command;
@@ -32,8 +29,9 @@ public class MainCommand extends Commander<CommandSender> implements WrappedComm
 						))
 				.arg("delete", desc("Delete a mail"), sender -> sender.sendMessage("pute"),
 						arg(
-								(sender, input) -> DeleteMail.deleteMail((Player) sender, (Integer) input[0]),
-								new ArgInteger()
+								(sender, input) -> DeleteMail.deleteMail((Player) sender, (Integer) input[0], input[1].equals("confirm")),
+								new ArgInteger().setRequired(true),
+								new ArgString().setRequired(false)
 						));
 	}
 

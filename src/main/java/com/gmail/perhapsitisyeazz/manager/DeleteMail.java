@@ -11,31 +11,27 @@ import org.bukkit.entity.Player;
 
 public class DeleteMail {
 
-	public static void deleteMail(Player sender, Integer integer) {
-		JsonObject object = Data.getJsonObject(sender);
-		JsonArray array = object.getAsJsonArray("EmailList");
-		int size = array.size();
-		if (integer <= 0 && integer > size) {
-			sender.sendMessage("This mail doesn't exist.");
+	public static void deleteMail(Player sender, Integer integer, boolean confirm) {
+		if (!confirm) {
+			JsonObject object = Data.getJsonObject(sender);
+			JsonArray array = object.getAsJsonArray("EmailList");
+			int size = array.size();
+			if (integer <= 0 && integer > size) {
+				sender.sendMessage("This mail doesn't exist.");
+				return;
+			}
+			sender.sendMessage(new ComponentBuilder()
+					.append("     ")
+					.append("YES")
+					.event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, TextComponent.fromLegacyText("YES")))
+					.event(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/mail delete " + integer + " confirm"))
+					.append("           ").retain(ComponentBuilder.FormatRetention.NONE).reset()
+					.append("NO")
+					.event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, TextComponent.fromLegacyText("YES")))
+					.event(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "test"))
+					.create());
 			return;
 		}
-		sender.sendMessage(new ComponentBuilder()
-				.append("     ")
-				.append("YES")
-				.event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, TextComponent.fromLegacyText("YES")))
-				.event(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/mail delete " + integer + " confirm"))
-				.append("           ").retain(ComponentBuilder.FormatRetention.NONE).reset()
-				.append("NO")
-				.event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, TextComponent.fromLegacyText("YES")))
-				.event(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "test"))
-				.create());
-	}
-
-	public static void ew(Player sender){
-		sender.sendMessage("ew");
-	}
-
-	public static void confirmDeleteMail(Player sender, Integer integer) {
 		JsonObject object = Data.getJsonObject(sender);
 		JsonArray array = object.getAsJsonArray("EmailList");
 		array.remove(integer);
