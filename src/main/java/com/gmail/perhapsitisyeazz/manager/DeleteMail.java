@@ -20,10 +20,13 @@ public class DeleteMail {
 			return;
 		}
 		sender.sendMessage(new ComponentBuilder()
+				.append("     ")
 				.append("YES")
 				.event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, TextComponent.fromLegacyText("YES")))
 				.event(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/mail delete " + integer + " confirm"))
+				.append("           ").retain(ComponentBuilder.FormatRetention.NONE).reset()
 				.append("NO")
+				.event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, TextComponent.fromLegacyText("YES")))
 				.create());
 	}
 
