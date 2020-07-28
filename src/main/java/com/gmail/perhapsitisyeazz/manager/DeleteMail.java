@@ -27,7 +27,12 @@ public class DeleteMail {
 				.append("           ").retain(ComponentBuilder.FormatRetention.NONE).reset()
 				.append("NO")
 				.event(new HoverEvent(HoverEvent.Action.SHOW_TEXT, TextComponent.fromLegacyText("YES")))
+				.event(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "test"))
 				.create());
+	}
+
+	public static void ew(Player sender){
+		sender.sendMessage("ew");
 	}
 
 	public static void confirmDeleteMail(Player sender, Integer integer) {
