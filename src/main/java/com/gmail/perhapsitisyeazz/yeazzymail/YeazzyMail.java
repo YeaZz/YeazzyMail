@@ -1,7 +1,7 @@
-package com.gmail.perhapsitisyeazz;
+package com.gmail.perhapsitisyeazz.yeazzymail;
 
-import com.gmail.perhapsitisyeazz.command.MainCommand;
-import com.gmail.perhapsitisyeazz.listener.JoinEvent;
+import com.gmail.perhapsitisyeazz.yeazzymail.command.MainCommand;
+import com.gmail.perhapsitisyeazz.yeazzymail.listener.JoinEvent;
 import com.moderocky.mask.template.BukkitPlugin;
 
 import java.io.File;
@@ -23,7 +23,7 @@ public class YeazzyMail extends BukkitPlugin {
         if (!storingFile.exists()) storingFile.mkdirs();
         register(
                 new JoinEvent()
-                );
+        );
         register(
                 new MainCommand()
         );

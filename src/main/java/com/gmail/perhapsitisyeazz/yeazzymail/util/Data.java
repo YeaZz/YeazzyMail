@@ -1,4 +1,4 @@
-package com.gmail.perhapsitisyeazz.util;
+package com.gmail.perhapsitisyeazz.yeazzymail.util;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
@@ -8,7 +8,7 @@ import org.bukkit.OfflinePlayer;
 import java.io.File;
 import java.util.UUID;
 
-import static com.gmail.perhapsitisyeazz.YeazzyMail.storingFile;
+import static com.gmail.perhapsitisyeazz.yeazzymail.YeazzyMail.storingFile;
 
 public class Data {
 

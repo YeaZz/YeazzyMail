@@ -1,4 +1,4 @@
-package com.gmail.perhapsitisyeazz.util;
+package com.gmail.perhapsitisyeazz.yeazzymail.util;
 
 import com.google.gson.JsonObject;
 import com.moderocky.mask.internal.utility.FileManager;
@@ -6,7 +6,7 @@ import org.bukkit.entity.Player;
 
 import java.io.File;
 
-import static com.gmail.perhapsitisyeazz.YeazzyMail.storingFile;
+import static com.gmail.perhapsitisyeazz.yeazzymail.YeazzyMail.storingFile;
 
 public class JoinFile {
 

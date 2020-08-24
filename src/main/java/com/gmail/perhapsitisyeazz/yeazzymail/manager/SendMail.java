@@ -1,6 +1,6 @@
-package com.gmail.perhapsitisyeazz.manager;
+package com.gmail.perhapsitisyeazz.yeazzymail.manager;
 
-import com.gmail.perhapsitisyeazz.util.Data;
+import com.gmail.perhapsitisyeazz.yeazzymail.util.Data;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;

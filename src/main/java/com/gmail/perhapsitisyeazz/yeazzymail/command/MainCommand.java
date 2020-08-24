@@ -1,6 +1,10 @@
-package com.gmail.perhapsitisyeazz.command;
+package com.gmail.perhapsitisyeazz.yeazzymail.command;
 
 import com.gmail.perhapsitisyeazz.manager.*;
+import com.gmail.perhapsitisyeazz.yeazzymail.manager.DeleteMail;
+import com.gmail.perhapsitisyeazz.yeazzymail.manager.HelpMail;
+import com.gmail.perhapsitisyeazz.yeazzymail.manager.ListMail;
+import com.gmail.perhapsitisyeazz.yeazzymail.manager.SendMail;
 import com.moderocky.mask.command.ArgInteger;
 import com.moderocky.mask.command.ArgOfflinePlayer;
 import com.moderocky.mask.command.ArgString;

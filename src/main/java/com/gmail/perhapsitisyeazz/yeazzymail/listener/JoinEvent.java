@@ -1,7 +1,7 @@
-package com.gmail.perhapsitisyeazz.listener;
+package com.gmail.perhapsitisyeazz.yeazzymail.listener;
 
-import com.gmail.perhapsitisyeazz.util.Data;
-import com.gmail.perhapsitisyeazz.util.JoinFile;
+import com.gmail.perhapsitisyeazz.yeazzymail.util.Data;
+import com.gmail.perhapsitisyeazz.yeazzymail.util.JoinFile;
 import com.google.gson.JsonObject;
 import com.moderocky.mask.internal.utility.FileManager;
 import org.bukkit.entity.Player;

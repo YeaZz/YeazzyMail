@@ -1,6 +1,6 @@
-package com.gmail.perhapsitisyeazz.manager;
+package com.gmail.perhapsitisyeazz.yeazzymail.manager;
 
-import com.gmail.perhapsitisyeazz.YeazzyMail;
+import com.gmail.perhapsitisyeazz.yeazzymail.YeazzyMail;
 import com.moderocky.mask.command.Commander;
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.chat.ClickEvent;
