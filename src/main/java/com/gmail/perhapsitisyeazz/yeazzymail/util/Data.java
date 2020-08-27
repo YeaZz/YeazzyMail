@@ -13,22 +13,22 @@ import static com.gmail.perhapsitisyeazz.yeazzymail.YeazzyMail.storingFile;
 public class Data {
 
 	@SuppressWarnings("deprecation")
-	public static JsonObject getJsonObject(OfflinePlayer player) {
+	public JsonObject getJsonObject(OfflinePlayer player) {
 		String playerJsonString = getStringObject(player);
 		return (JsonObject) new JsonParser().parse(playerJsonString);
 	}
 
-	public static String getStringObject(OfflinePlayer player) {
+	public String getStringObject(OfflinePlayer player) {
 		File playerData = getData(player);
 		return FileManager.read(playerData);
 	}
 
-	public static File getData(OfflinePlayer player) {
+	public File getData(OfflinePlayer player) {
 		UUID playerUniqueId = player.getUniqueId();
 		return new File(storingFile, playerUniqueId + ".json");
 	}
 
-	public static void saveObject(File file, JsonObject jsonObject) {
+	public void saveObject(File file, JsonObject jsonObject) {
 		String string = jsonObject.toString();
 		FileManager.write(file, string);
 	}

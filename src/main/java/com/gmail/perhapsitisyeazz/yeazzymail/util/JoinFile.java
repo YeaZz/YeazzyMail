@@ -10,7 +10,7 @@ import static com.gmail.perhapsitisyeazz.yeazzymail.YeazzyMail.storingFile;
 
 public class JoinFile {
 
-	public static JsonObject getJsonObject(Player player) {
+	public JsonObject getJsonObject(Player player) {
 		JsonObject object = new JsonObject();
 		object.addProperty("UniqueID", player.getUniqueId().toString());
 		object.addProperty("Username", player.getName());
@@ -19,7 +19,7 @@ public class JoinFile {
 		return object;
 	}
 
-	public static void createPlayerFile(Player player) {
+	public void createPlayerFile(Player player) {
 		String uniqueID = player.getUniqueId().toString();
 		if (new File(storingFile + uniqueID).exists()) return;
 		String jsonObjectToString = getJsonObject(player).toString();

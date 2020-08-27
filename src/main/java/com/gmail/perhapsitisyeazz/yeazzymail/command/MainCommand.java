@@ -1,10 +1,6 @@
 package com.gmail.perhapsitisyeazz.yeazzymail.command;
 
-import com.gmail.perhapsitisyeazz.manager.*;
-import com.gmail.perhapsitisyeazz.yeazzymail.manager.DeleteMail;
-import com.gmail.perhapsitisyeazz.yeazzymail.manager.HelpMail;
-import com.gmail.perhapsitisyeazz.yeazzymail.manager.ListMail;
-import com.gmail.perhapsitisyeazz.yeazzymail.manager.SendMail;
+import com.gmail.perhapsitisyeazz.yeazzymail.manager.Mail;
 import com.moderocky.mask.command.ArgInteger;
 import com.moderocky.mask.command.ArgOfflinePlayer;
 import com.moderocky.mask.command.ArgString;
@@ -23,21 +19,22 @@ import java.util.List;
 
 public class MainCommand extends Commander<CommandSender> implements WrappedCommand {
 
+	private final Mail mail = new Mail();
 
 	@Override
 	protected CommandImpl create() {
 		return command("mail")
-				.arg("help", sender -> HelpMail.mailHelpCommand(sender, this))
-				.arg("list", desc("List your mails"), sender -> ListMail.getMailList((Player) sender))
+				.arg("help", sender -> mail.mailHelpCommand(sender, this))
+				.arg("list", desc("List your mails"), sender -> mail.getMailList((Player) sender))
 				.arg("send", desc("Send a mail"), sender -> sender.sendMessage("Put a string"),
 						arg(
-								(sender, input) -> SendMail.sendMail((Player) sender, (OfflinePlayer) input[0], (String) input[1]),
+								(sender, input) -> mail.sendMail((Player) sender, (OfflinePlayer) input[0], (String) input[1]),
 								new ArgOfflinePlayer(),
 								new ArgStringFinal()
 						))
 				.arg("delete", desc("Delete a mail"), sender -> sender.sendMessage("Put a integer"),
 						arg(
-								(sender, input) -> DeleteMail.deleteMail((Player) sender, (Integer) input[0], input[1].equals("confirm")),
+								(sender, input) -> mail.deleteMail((Player) sender, (Integer) input[0], input[1].equals("confirm")),
 								new ArgInteger().setRequired(true),
 								new ArgString().setRequired(false)
 						));
@@ -45,7 +42,7 @@ public class MainCommand extends Commander<CommandSender> implements WrappedComm
 
 	@Override
 	public CommandSingleAction<CommandSender> getDefault() {
-		return HelpMail::sendDefaultMessage;
+		return mail::sendDefaultMessage;
 	}
 
 	@Override
